@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
 </head>
 <body>
+  <h1>Hi there <%= @invited_user %>!</h1>
+  <p>Your friend <%= @current_user.email %> has added you to one of his/her personal streams on LinkLove.</p>
 
+  <%unless message.nil? %>
+    <p>message from <%= @current_user.email %></p>
+    <p><%= @message %></p>
+  <%end%>
+
+  <p><a href="http://www.linklove.us/streams/<%= @stream.id %>">Click here to Join the Stream!</a></p>
+
+  <p>Happy Sharing,</p>
+  <p>The LinkLove Team</p>
 </body>
 </html>

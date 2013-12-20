@@ -1,8 +1,9 @@
 <div class="streamspage">
 <div class="container">
-  <h1>Your Streams</h1>
+
 
   <div class="streams_table">
+    <h1>Your Streams</h1>
     <h5><a href="/streams/new">Click Here</a> to create a new stream.</h5>
     <%if current_user.streams.present? %>
       <%current_user.streams.each do |stream|%>
