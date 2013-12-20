@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   include Sprockets::Helpers::RailsHelper
-  include Sprockets::Helpers::IsolateHelper
+  include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
   # if Rails.env.development?
