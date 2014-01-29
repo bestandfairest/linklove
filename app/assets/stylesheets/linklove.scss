@@ -58,6 +58,8 @@ h2.form {
   -webkit-text-stroke-color: $nav_color;
 }
 
+
+
 /*=====================================
     Stream Show
 =====================================*/
@@ -414,4 +416,12 @@ footer {
 
 .streamspage {
   background-color: $yellow_color;
+}
+
+div.row.home.marketing {
+  max-height: 500px;
+}
+
+div.home.col-lg-4 {
+  padding-top: 150px;
 }
