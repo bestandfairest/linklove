@@ -4,8 +4,8 @@ development:
   database: linklove_app_development
   pool: 5
   host: localhost
-  username: daniel
-  password: password
+  username: nickdoherty
+  password:
   cucumber:
 
 test:
@@ -14,7 +14,7 @@ test:
   database: linklove_app_test
   pool: 5
   host: localhost
-  username: daniel
-  password: password
+  username: nickdoherty
+  password:
   cucumber:
 

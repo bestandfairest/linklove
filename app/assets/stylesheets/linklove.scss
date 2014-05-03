@@ -58,6 +58,8 @@ h2.form {
   -webkit-text-stroke-color: $nav_color;
 }
 
+
+
 /*=====================================
     Stream Show
 =====================================*/
@@ -330,6 +332,14 @@ input.btn.btn-success.chrome {
   margin-left: 15px;
 }
 
+body.chrome-extension .navbar {
+  display: none;
+}
+
+body.chrome-extension footer {
+  display: none;
+}
+
 i.hp-icons {
   font-size: 120px;
   margin-top: 40px;
@@ -406,4 +416,12 @@ footer {
 
 .streamspage {
   background-color: $yellow_color;
+}
+
+div.row.home.marketing {
+  max-height: 500px;
+}
+
+div.home.col-lg-4 {
+  padding-top: 150px;
 }
