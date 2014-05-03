@@ -35,6 +35,7 @@ GEM
       rake (>= 0.8.7)
     arel (3.0.3)
     atomic (1.1.14)
+    aws_cf_signer (0.1.2)
     bcrypt-ruby (3.0.0)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
@@ -53,6 +54,9 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+    cloudinary (1.0.72)
+      aws_cf_signer
+      rest-client
     coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -93,7 +97,6 @@ GEM
     dotenv-rails (0.9.0)
       dotenv (= 0.9.0)
     erubis (2.7.0)
-    excon (0.13.4)
     execjs (2.0.2)
     factory_girl (4.3.0)
       activesupport (>= 3.0.0)
@@ -102,17 +105,6 @@ GEM
       railties (>= 3.0.0)
     faker (1.2.0)
       i18n (~> 0.5)
-    fog (1.3.1)
-      builder
-      excon (~> 0.13.0)
-      formatador (~> 0.2.0)
-      mime-types
-      multi_json (~> 1.0)
-      net-scp (~> 1.0.4)
-      net-ssh (>= 2.1.3)
-      nokogiri (~> 1.5.0)
-      ruby-hmac
-    formatador (0.2.4)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     haml (4.0.4)
@@ -142,13 +134,8 @@ GEM
       railties
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_magick (3.6.0)
-      subexec (~> 0.2.1)
     multi_json (1.8.2)
     multi_test (0.0.2)
-    net-scp (1.0.4)
-      net-ssh (>= 1.99.1)
-    net-ssh (2.7.0)
     nokogiri (1.5.10)
     orm_adapter (0.5.0)
     pg (0.17.0)
@@ -202,7 +189,6 @@ GEM
     ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rmagick (2.13.2)
     rspec-core (2.14.7)
     rspec-expectations (2.14.4)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -214,7 +200,6 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    ruby-hmac (0.4.0)
     sass (3.2.12)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -228,7 +213,6 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    subexec (0.2.3)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -264,6 +248,7 @@ DEPENDENCIES
   binding_of_caller
   capybara
   carrierwave
+  cloudinary
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
@@ -271,12 +256,10 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   faker
-  fog (~> 1.3.1)
   haml
   jquery-rails
   less-rails-bootstrap
   meta_request
-  mini_magick
   pg
   pry-debugger
   pry-rails
@@ -284,7 +267,6 @@ DEPENDENCIES
   quiet_assets
   rails (= 3.2.14)
   rails_12factor
-  rmagick
   rspec-rails
   sass-rails (~> 3.2.3)
   sextant
