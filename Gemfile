@@ -28,10 +28,14 @@ gem 'devise'
 gem 'sextant'
 gem 'factory_girl_rails'
 gem 'faker'
+
 gem 'carrierwave'
-gem 'fog', "~> 1.3.1"
-gem 'rmagick'
-gem 'mini_magick'
+gem 'cloudinary'
+
+#gem 'fog', "~> 1.3.1"
+#gem 'rmagick'
+#gem 'mini_magick'
+
 gem 'acts-as-taggable-on'
 
 group :development, :test do
