@@ -1,0 +1,46 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.dfdfcom/docs/2.0/configuration-referencefoobar
+version: 2.1
+# Use a package of configuration called an orb.
+orbs:
+  # Declare a dependency on the welcome-orb
+  welcome: circleci/welcome-orb@0.4.1
+  jira: circleci/jira@1.0.5
+# Orchestrate or schedule a set of jobs
+workflows:
+  # Name the workflow "welcome"
+  welcome:
+    # Run the welcome/run job in its own container
+    jobs:
+      - welcome/run
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build # only deploy once build job has completed
+          post-steps:
+            - jira/notify
+      - deploy:
+          name: Dev East
+          post-steps:
+            - jira/notify:
+                environment_type: development
+                job_type: deployment
+jobs:
+  build:
+    docker: 
+      - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
+        auth:
+          username: nickdoco
+          password: ac0e5792-cb19-4462-8cea-e42482e9603f
+    steps:
+      - checkout # check out the code in the project directory
+      - run: echo "hello world" # run the `echo` command
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - run:
+          name: Deploy Over SSH
+          command: |
+            echo "deployed"
